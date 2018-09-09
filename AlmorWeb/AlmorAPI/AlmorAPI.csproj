@@ -134,7 +134,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Achievement.cs" />
+    <Compile Include="Models\Certification.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\CompanyCertification.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Goal.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserAchievement.cs" />
+    <Compile Include="Models\UserGoal.cs" />
     <Compile Include="Persistance\OracleDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace AlmorAPI.Controllers
 {
+    
     public class AlmorAPIController : ApiController
     {
         OracleDbContext _contex = new OracleDbContext();
@@ -16,12 +17,13 @@ namespace AlmorAPI.Controllers
         [HttpGet]
         [ActionName("login")]
         
-        public Usuario GetUserByName(String username, String password)
+        public User GetUserByName(String username, String password)
         {
+            User us = _contex.Users.Include("UserGoals").Include("UserAchievements").Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+            return us;
             try
             {
-                Usuario us = _contex.Usuarios.Where(u => u.Username == username).FirstOrDefault();
-                return us;
+              
             }
             catch (Exception e)
             {
@@ -32,12 +34,13 @@ namespace AlmorAPI.Controllers
 
         [HttpPost]
         [ActionName("singup")]
-        public void CreateUser(Usuario us)
+        public void CreateUser(User us)
         {
+            _contex.Users.Add(us);
+            _contex.SaveChanges();
             try
             {
-                _contex.Usuarios.Add(us);
-                _contex.SaveChanges();
+               
             }
             catch(Exception e)
             {

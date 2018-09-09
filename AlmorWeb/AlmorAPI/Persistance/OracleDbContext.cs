@@ -10,7 +10,18 @@ namespace AlmorAPI.Persistance
     public class OracleDbContext : DbContext
     {
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Goal> Goals { get; set; }
+        public DbSet<Achievement> Achievements { get; set; }
+        public DbSet<UserAchievement> UserAchievements { get; set; }
+        public DbSet<UserGoal> UserGoals { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Certification> Certifications { get; set; }
+        public DbSet<CompanyCertification> CompanyCertifications { get; set; }
+
+
         /*
         public OracleDbContext() : base("OracleDbConnectionString")
         {
