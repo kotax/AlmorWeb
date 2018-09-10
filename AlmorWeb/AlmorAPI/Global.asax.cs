@@ -14,8 +14,8 @@ namespace AlmorAPI
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             //WebApiConfig.Register(GlobalConfiguration.Configuration);
-            //Database.SetInitializer(new DropCreateDatabaseAlways<OracleDbContext>());
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<OracleDbContext>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<OracleDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<OracleDbContext>());
 
 
         }

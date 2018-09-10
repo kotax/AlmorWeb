@@ -11,14 +11,15 @@ namespace AlmorAPI.Models
     public class UserAchievement
     {
        
-       // public int Achivement { get; set;}
+       // 
 
         [Key]
         [Column("CD_ACHIEVEMENT", Order = 0)]
         public int AchivementId { get; set; }
 
-       
-        //public User User { get; set; }
+        [ForeignKey("AchivementId")]
+        public Achievement Achivement { get; set; }
+        public User User { get; set; }
 
         [Key]
         [Column("CD_USER", Order = 1)]

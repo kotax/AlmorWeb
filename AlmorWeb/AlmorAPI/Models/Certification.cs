@@ -25,7 +25,7 @@ namespace AlmorAPI.Models
         public int MinStress { get; set; }
 
         [Required]
-        [Column("VL_MIN_POSTURE)")]
+        [Column("VL_MIN_POSTURE")]
         public int MinPosture { get; set; }
 
         public IList<CompanyCertification> CompanyCertifications { get; set; }

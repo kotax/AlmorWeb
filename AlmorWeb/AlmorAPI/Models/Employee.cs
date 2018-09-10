@@ -13,6 +13,9 @@ namespace AlmorAPI.Models
 
         [Required]
         [Column("CD_COMPANY")]
+        public int CompanyId { get; set; }
+
+        [ForeignKey("CompanyId")]
         public Company Company { get; set; }
 
         [Required]
@@ -26,6 +29,9 @@ namespace AlmorAPI.Models
         public String Sector { get; set; }
 
         [Column("CD_MANAGER")]
+        public int ManagerId { get; set; }
+
+        [ForeignKey("ManagerId")]
         public Employee Manager { get; set; }
 
 

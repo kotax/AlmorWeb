@@ -24,7 +24,7 @@ namespace AlmorAPI.Models
         [StringLength(20)]
         public String Category { get; set; }
 
-        public List<UserAchievement> UserAchievements { get; set; }
+        public IList<UserAchievement> UserAchievements { get; set; }
 
     }
 }

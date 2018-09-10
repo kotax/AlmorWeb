@@ -23,7 +23,7 @@ namespace AlmorAPI.Models
         [Column("VL_GOAL")]
         public int Value { get; set; }
 
-        public List<UserGoal> UserGoals { get; set; }
+        public IList<UserGoal> UserGoals { get; set; }
 
     }
 }
