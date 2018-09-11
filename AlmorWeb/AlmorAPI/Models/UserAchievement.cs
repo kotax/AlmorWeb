@@ -18,7 +18,7 @@ namespace AlmorAPI.Models
         public int AchivementId { get; set; }
 
         [ForeignKey("AchivementId")]
-        public Achievement Achivement { get; set; }
+        public Achievement Achievement { get; set; }
         //public User User { get; set; }
 
         [Key]

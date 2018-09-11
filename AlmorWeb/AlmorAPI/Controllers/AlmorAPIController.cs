@@ -14,12 +14,13 @@ namespace AlmorAPI.Controllers
     {
         OracleDbContext _contex = new OracleDbContext();
 
+
         [HttpGet]
+        //[Route("/api/login")]
         [ActionName("login")]
-        
         public User GetUserByName(String username, String password)
         {
-            User us = _contex.Users.Include("UserGoals").Include("UserAchievements").Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+            User us = _contex.Users.Include("UserGoals.Goal").Include("UserAchievements.Achievement").Where(u => u.Username == username && u.Password == password).FirstOrDefault();
             return us;
             try
             {
