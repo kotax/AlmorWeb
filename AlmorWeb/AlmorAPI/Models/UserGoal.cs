@@ -13,13 +13,14 @@ namespace AlmorAPI.Models
         [Key]
         [Column("DT_GOAL_USER", Order = 0)]
         public DateTime DtGoalUser { get; set; }
-        
-       
-        //public Goal Goal{ get; set; }
 
+
+        
         [Key]
         [Column("CD_GOAL", Order = 1)]
         public int GoalId { get; set; }
+        [ForeignKey("GoalId")]
+        public Goal Goal{ get; set; }
 
         //public User User{ get; set; }
 

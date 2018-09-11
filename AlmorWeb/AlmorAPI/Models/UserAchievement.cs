@@ -19,7 +19,7 @@ namespace AlmorAPI.Models
 
         [ForeignKey("AchivementId")]
         public Achievement Achivement { get; set; }
-        public User User { get; set; }
+        //public User User { get; set; }
 
         [Key]
         [Column("CD_USER", Order = 1)]
