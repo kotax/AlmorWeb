@@ -16,8 +16,6 @@ namespace AlmorAPI.Models
         [Key]
         [Column("CD_COMPANY", Order = 0)]
         public int CompanyId { get; set; }
-
-        
        // public Certification Certification { get; set; }
         [Key]
         [Column("CD_CERTIFICATION", Order = 1)]

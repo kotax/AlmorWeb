@@ -18,34 +18,35 @@ namespace AlmorAPI.Controllers
         [HttpGet]
         //[Route("/api/login")]
         [ActionName("login")]
-        public User GetUserByName(String username, String password)
+        public HttpResponseMessage GetUserByName(String username, String password)
         {
-            User us = _contex.Users.Include("UserGoals.Goal").Include("UserAchievements.Achievement").Where(u => u.Username == username && u.Password == password).FirstOrDefault();
-            return us;
+            
             try
             {
-              
+                User us = _contex.Users.Include("UserGoals.Goal").Include("UserAchievements.Achievement").Where(u => u.Username == username && u.Password == password).FirstOrDefault();
+                return Request.CreateResponse<User>(HttpStatusCode.OK, us);
             }
             catch (Exception e)
             {
-                return null;
+                return Request.CreateResponse(HttpStatusCode.NoContent);
             }
             
         }
 
         [HttpPost]
         [ActionName("singup")]
-        public void CreateUser(User us)
+        public HttpResponseMessage CreateUser(User us)
         {
-            _contex.Users.Add(us);
-            _contex.SaveChanges();
+           
             try
             {
-               
+                _contex.Users.Add(us);
+                _contex.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.Created);
             }
             catch(Exception e)
             {
-                
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);   
             }
            
         }
