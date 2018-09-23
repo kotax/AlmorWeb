@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Log in";
+    ViewBag.Style = "/Content/sign.css";
+}
+
+<div class="prop">
+    <div class="logo">
+        <img src="/img/logo-almor.png" alt="" id="logo">
+        <h1>Potal Almor</h1>
+    </div>
+</div>
+<div class="sign">
+
+
+    <form action="/Home/Login" method="post">
+
+        <input type="text" placeholder="Usuario" name="username">
+        <input type="password" placeholder="Senha"  name="password">
+        <input type="submit" value="Log in">
+    </form>
+</div>
+

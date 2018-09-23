@@ -1,0 +1,420 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Style = "/Content/style.css";
+}
+
+<header>
+    <div class="logo"><img src="/img/logo-almor.png" alt="" style="height: 30px;"> <span>Almor</span></div>
+    <div class="nav">
+        <div class="tabs">
+            <a href="Overview">
+                <div class="tab tab-hilighted" id="hist-tab">
+                    Overview
+                </div>
+            </a>
+            <a href="Ranking">
+                <div class="tab " id="d-tab">
+                    Ranking
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="user-nav">
+
+        <div class="user-btn">
+            <img src="/img/user_icon.svg" alt="">
+        </div>
+        <ul class="menu">
+            <li>
+                Detalhes
+                <ul class="detail">
+                    <li>Olá, Fulano</li>
+                    <li>ID: 23145</li>
+                    <li>Setor: TI</li>
+                </ul>
+            </li>
+            <a href="/"><li id="sign-out">Sign Out</li></a>
+        </ul>
+    </div>
+</header>
+<div class="wrapper">
+
+    <div class="content">
+        <div class="card">
+            <div class="container">
+
+                <canvas id="chart-geral"></canvas>
+
+
+            </div>
+        </div>
+        <div class="container-bt">
+            <div class="cert">
+                <div class="leg">
+                    <h2>Para a Próxima Certificação:</h2>
+                    <p class="ok">Postura Correta: <span>65%</span></p>
+                    <p class="stress">Média Sem Estresse: <span>50%</span></p>
+                </div>
+                <img src="img/trophy.png" alt="">
+            </div>
+
+        </div>
+        <div class="title">
+            <h2>Esse Mês</h2>
+        </div>
+        <div class="card">
+            <div>
+                <div class="half-card">
+                    <canvas id="chart-stress"></canvas>
+                </div>
+                <div class="half-card">
+                    <canvas id="chart-ok"></canvas>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="acc-item">
+                    <div class="acc" id="1-acc">
+                        <table>
+                            <tr>
+                                <td class="position">
+                                    #1
+                                </td>
+                                <td class="name">
+                                    John Doe
+                                </td>
+                                <td class="points">
+                                    13450
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc" id="1-acc">
+                        <table>
+                            <tr>
+                                <td class="position">
+                                    #2
+                                </td>
+                                <td class="name">
+                                    John Doe
+                                </td>
+                                <td class="points">
+                                    13450
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc" id="1-acc">
+                        <table>
+                            <tr>
+                                <td class="position">
+                                    #3
+                                </td>
+                                <td class="name">
+                                    John Doe
+                                </td>
+                                <td class="points">
+                                    13450
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc" id="1-acc">
+                        <table>
+                            <tr>
+                                <td class="position">
+                                    #8
+                                </td>
+                                <td class="name">
+                                    John Doe
+                                </td>
+                                <td class="points">
+                                    13450
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc" id="1-acc">
+                        <table>
+                            <tr>
+                                <td class="position">
+                                    #9
+                                </td>
+                                <td class="name">
+                                    John Doe
+                                </td>
+                                <td class="points">
+                                    13450
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc" id="1-acc">
+                        <table>
+                            <tr>
+                                <td class="position">
+                                    #10
+                                </td>
+                                <td class="name">
+                                    John Doe
+                                </td>
+                                <td class="points">
+                                    13450
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer></footer>
+
+<script src="/Scripts/jquery.min.js"></script>
+<script src="/Scripts/Chart.bundle.min.js"></script>
+<script src="/Scripts/utils.js"></script>
+<script src="/Scripts/script_over.js"></script>
+
+<script>
+
+    //Chart.defaults.global.defaultFontColor = '#FFF';
+    var configs = {
+        type: 'line',
+        data: {
+
+
+            datasets: [
+
+                {
+                    label: 'Postura Correta - Certificação',
+                    backgroundColor: 'rgba(0, 112, 59,0.5)',
+                    borderColor: 'rgb(0, 112, 59)',
+                    fill: false,
+                    data: [{
+                        x: new Date('2017-01-1 12:00:00'),
+                        y: 65
+                    }, {
+                        x: new Date('2017-12-1 12:00:00'),
+                        y: 65
+                    }]
+                },
+                {
+                    label: 'Sem Estresse - Certificação',
+                    backgroundColor: 'rgba(19, 93, 178,0.5)',
+                    borderColor: 'rgb(19, 93, 178)',
+                    fill: false,
+                    data: [{
+                        x: new Date('2017-01-1 12:00:00'),
+                        y: 50
+                    }, {
+                        x: new Date('2017-12-1 12:00:00'),
+                        y: 50
+                    }]
+                },
+                {
+                    label: 'Postura Correta',
+                    backgroundColor: 'rgba(0, 204, 108,0.5)',
+                    borderColor: 'rgb(0, 204, 108)',
+                    fill: false,
+                    data: [{
+                        x: new Date('2017-01-1 12:00:00'),
+                        y: 65
+                    }, {
+                        x: new Date('2017-02-1 12:00:00'),
+                        y: 64
+                    }, {
+                        x: new Date('2017-03-1 12:00:00'),
+                        y: 62
+                    }, {
+                        x: new Date('2017-04-1 12:00:00'),
+                        y: 66
+                    }, {
+                        x: new Date('2017-05-1 12:00:00'),
+                        y: 70
+                    }, {
+                        x: new Date('2017-06-1 12:00:00'),
+                        y: 65
+                    }, {
+                        x: new Date('2017-07-1 12:00:00'),
+                        y: 64
+                    }, {
+                        x: new Date('2017-08-1 12:00:00'),
+                        y: 65
+                    }, {
+                        x: new Date('2017-09-1 12:00:00'),
+                        y: 62
+                    }, {
+                        x: new Date('2017-10-1 12:00:00'),
+                        y: 64
+                    }, {
+                        x: new Date('2017-11-1 12:00:00'),
+                        y: 66
+                    }, {
+                        x: new Date('2017-12-1 12:00:00'),
+                        y: 60
+                    }]
+                },
+                {
+                    label: 'Sem Estresse',
+                    backgroundColor: 'rgba(53, 145, 252,0.5)',
+                    borderColor: 'rgb(53, 145, 252)',
+                    fill: false,
+                    data: [{
+                        x: new Date('2017-01-1 12:00:00'),
+                        y: 47
+                    }, {
+                        x: new Date('2017-02-1 12:00:00'),
+                        y: 43
+                    }, {
+                        x: new Date('2017-03-1 12:00:00'),
+                        y: 44
+                    }, {
+                        x: new Date('2017-04-1 12:00:00'),
+                        y: 43
+                    }, {
+                        x: new Date('2017-05-1 12:00:00'),
+                        y: 42
+                    }, {
+                        x: new Date('2017-06-1 12:00:00'),
+                        y: 45
+                    }, {
+                        x: new Date('2017-07-1 12:00:00'),
+                        y: 46
+                    }, {
+                        x: new Date('2017-08-1 12:00:00'),
+                        y: 47
+                    }, {
+                        x: new Date('2017-09-1 12:00:00'),
+                        y: 46
+                    }, {
+                        x: new Date('2017-10-1 12:00:00'),
+                        y: 49
+                    }, {
+                        x: new Date('2017-11-1 12:00:00'),
+                        y: 50
+                    }, {
+                        x: new Date('2017-12-1 12:00:00'),
+                        y: 53
+                    }]
+                }
+            ]
+        },
+        scaleFontColor: '#fff',
+        options: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    fontColor: '#fff'
+                }
+            },
+            title: {
+                text: 'geral'
+            },
+            scales: {
+
+                xAxes: [{
+                    type: 'time',
+                    time: {
+                        unit: 'month',
+                        // round: 'day'
+                        tooltipFormat: 'MMMM',
+
+                    },
+                    ticks: {
+                        fontColor: '#fff'
+                    },
+                    scaleLabel: {
+                        fontColor: '#fff',
+                        display: true,
+                        labelString: 'Date'
+                    },
+                    gridLines: {
+                        color: 'rgba(0,0,0,0.5)',
+                        lineWidth: 2
+                    }
+                }],
+
+                yAxes: [{
+                    scaleLabel: {
+                        fontColor: '#fff',
+                        display: true,
+                        labelString: 'Porcentagem'
+                    },
+                    ticks: {
+                        fontColor: '#fff',
+                        suggestedMax: 100,
+                        suggestedMin: 0
+                    },
+                    gridLines: {
+                        color: 'rgba(0,0,0,0.5)',
+                        lineWidth: 2
+                    }
+                }]
+            },
+        }
+    };
+    var config3 = {
+        type: "pie",
+        title: "",
+        data: {
+            datasets: [{
+                data: [
+                    58,
+                    42
+                ],
+                backgroundColor: [
+                    'rgb(53, 145, 252)',
+                    'rgb(252, 53, 53)'
+                ],
+                label: "Percentual das atividades"
+
+            }],
+            labels: [
+                "Tranquilo",
+                "Estressado"]
+
+        },
+        options: {
+            responsive: true,
+
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 5,
+                    right: 0,
+                    top: 10,
+                    bottom: 10
+                }
+            },
+
+        }
+
+    };
+
+    window.onload = function () {
+        var ctx = document.getElementById('chart-geral').getContext('2d');
+        window.myLine = new Chart(ctx, configs);
+        window.myLine = new Chart(document.getElementById('chart-ok').getContext('2d'), config2);
+        window.myLine = new Chart(document.getElementById('chart-stress').getContext('2d'), config3);
+    };
+
+
+
+
+
+
+</script>
+

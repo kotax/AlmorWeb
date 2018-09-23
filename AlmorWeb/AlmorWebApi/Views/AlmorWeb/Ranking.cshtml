@@ -1,0 +1,573 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Style = "/Content/style.css";
+    Random r = new Random();
+
+}
+
+<header>
+    <div class="logo"> <img src="/img/logo-almor.png" alt="logo" style="height: 30px;"> <span>Almor</span> </div>
+    <div class="nav">
+        <div class="tabs">
+            <a href="Overview">
+                <div class="tab" id="hist-tab">
+                    Overview
+                </div>
+            </a>
+            <a href="Ranking">
+                <div class="tab tab-hilighted" id="d-tab">
+                    Ranking
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="user-nav">
+
+        <div class="user-btn">
+            <img src="/img/user_icon.svg" alt="user-icon">
+        </div>
+        <ul class="menu">
+            <li>
+                Detalhes
+                <ul class="detail">
+                    <li>Olá, Usuario</li>
+                    <li>ID: 23145</li>
+                    <li>Setor: TI</li>
+                </ul>
+            </li>
+            <li id="sign-out"><a href="/">Sign Out</a></li>
+        </ul>
+    </div>
+    <div class="search-nav">
+
+        <form action="ranking.html" class="search">
+            <input type="text">
+            <label>
+                <input type="submit" value="" />
+                <img src="/img/search-icon_48x48.svg" alt="search-icon" id="img-search" />
+
+            </label>
+        </form>
+
+
+    </div>
+</header>
+<div class="wrapper with-search">
+
+    <div class="content">
+
+        <div class="accordion">
+
+            @for (int i = 1; i < 21; i++)
+            {
+                
+                <div class="acc-item">
+                    <div class="acc" id="@(i)-acc">
+                        <table>
+                            <tr>
+                                <td class="position">
+                                    #@i
+                                </td>
+                                <td class="name">
+                                    John Doe
+                                </td>
+                                <td class="points">
+                                    @(13450 - i*10 - r.Next(0,6))
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="acc-content" id="@(i)-content">
+                        <div class="status">
+
+                            <div class="status-item info">
+                                Info
+
+                                <br />ID: <span>231</span>
+                                <br />Cargo: <span>Web Developer</span>
+                            </div>
+                            <div class="status-item">
+                                Metas Cumpridas:<br /><span>28/30</span>
+                            </div>
+                            <div class="status-item">
+                                Tempo sem estress:<br /><span>85%</span>
+                            </div>
+                        </div>
+                        <div class="graphs">
+                            <div class="graph-wrapper">
+                                <div class="graph-slide" id="@(i)-left">
+                                    <canvas id="@(i)-pie"></canvas>
+                                </div>
+                                <div class="graph-menu" id="@(i)-menu">
+                                    <img src="/img/arrow-l.svg" alt="" class="graph-menu-icon" id="@(i)-menu-icon">
+                                </div>
+                                <div class="graph-slide" id="@(i)-right">
+                                    <canvas id="@(i)-bar"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+
+            <!--
+       <div class="acc-item">
+           <div class="acc" id="2-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #2
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="2-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="2-left">
+                           <canvas id="2-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="2-menu">
+                           <img src="img/arrow-l.svg" id="2-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="2-right">
+                           <canvas id="2-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+
+           </div>
+
+       </div>
+       <div class="acc-item">
+           <div class="acc " id="3-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #3
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="3-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="3-left">
+                           <canvas id="3-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="3-menu">
+                           <img src="img/arrow-l.svg" id="3-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="3-right">
+                           <canvas id="3-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+
+       <div class="acc-item">
+           <div class="acc" id="4-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #4
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="4-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="4-left">
+                           <canvas id="4-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="4-menu">
+                           <img src="img/arrow-l.svg" id="4-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="4-right">
+                           <canvas id="4-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+
+
+       <div class="acc-item">
+           <div class="acc" id="5-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #5
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="5-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="5-left">
+                           <canvas id="5-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="5-menu">
+                           <img src="img/arrow-l.svg" id="5-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="5-right">
+                           <canvas id="5-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+       </div>
+       <div class="acc-item">
+           <div class="acc" id="6-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #6
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="6-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="6-left">
+                           <canvas id="6-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="6-menu">
+                           <img src="img/arrow-l.svg" id="6-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="6-right">
+                           <canvas id="6-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+       </div>
+       <div class="acc-item">
+           <div class="acc" id="7-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #7
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="7-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="7-left">
+                           <canvas id="7-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="7-menu">
+                           <img src="img/arrow-l.svg" id="7-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="7-right">
+                           <canvas id="7-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="acc-item">
+           <div class="acc" id="8-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #8
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="8-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="8-left">
+                           <canvas id="8-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="8-menu">
+                           <img src="img/arrow-l.svg" id="8-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="8-right">
+                           <canvas id="8-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+       </div>
+       <div class="acc-item">
+           <div class="acc" id="9-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #9
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="9-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="9-left">
+                           <canvas id="9-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="9-menu">
+                           <img src="img/arrow-l.svg" id="9-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="9-right">
+                           <canvas id="9-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+       </div>
+       <div class="acc-item">
+           <div class="acc" id="10-acc">
+               <table>
+                   <tr>
+                       <td class="position">
+                           #10
+                       </td>
+                       <td class="name">
+                           John Doe
+                       </td>
+                       <td class="points">
+                           13450
+                       </td>
+                   </tr>
+               </table>
+           </div>
+           <div class="acc-content" id="10-content">
+               <div class="status">
+
+                   <div class="status-item info">
+                       Info
+
+                       <br />ID: <span>231</span>
+                       <br />Cargo: <span>Web Developer</span>
+                   </div>
+                   <div class="status-item">
+                       Metas Cumpridas:<br /><span>28/30</span>
+                   </div>
+                   <div class="status-item">
+                       Tempo sem estress:<br /><span>85%</span>
+                   </div>
+               </div>
+               <div class="graphs">
+                   <div class="graph-wrapper">
+                       <div class="graph-slide" id="10-left">
+                           <canvas id="10-pie"></canvas>
+                       </div>
+                       <div class="graph-menu" id="10-menu">
+                           <img src="img/arrow-l.svg" id="10-menu-icon" alt="" class="graph-menu-icon">
+                       </div>
+                       <div class="graph-slide" id="10-right">
+                           <canvas id="10-bar"></canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+       </div>
+         -->
+
+        </div>
+
+    </div>
+</div>
+<footer></footer>
+
+<script src="/Scripts/jquery.min.js"></script>
+<script src="/Scripts/Chart.bundle.min.js"></script>
+<script src="/Scripts/moment.js"></script>
+<script src="/Scripts/utils.js"></script>
+
+
+<script>
+
+
+
+
+
+</script>
+<script src="/Scripts/script.js"></script>
+

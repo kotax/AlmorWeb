@@ -1,0 +1,116 @@
+
+@font-face{
+    font-family: "Gotham";
+    src: url("../fonts/GothamMedium.ttf");
+}
+
+@font-face{
+    font-family: "Gotham";
+    src: url("../fonts/GothamBold.ttf");
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: "Gotham-light";
+    src: url("../fonts/GothamLight.ttf");
+   
+}
+html{
+    height: 100%;
+}
+body
+{
+    background-color: #BEF1FF;
+    font-family: "Gotham";
+    margin: 0;
+    height: 100%;
+}
+h1,h2,h3,h4,h5,h6
+{
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-family: "Gotham-light";
+    font-size: 50px;
+    /*margin-bottom: 50px;*/
+}
+
+.prop{
+
+    background:linear-gradient(#093442,#105e77);
+    height: 100%;
+    float: left;
+    width: 60%;
+    position: relative
+}
+.logo-wrapper{
+    margin-top: 10px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+}
+.logo{
+    position: absolute;
+    margin-left: 15%;
+    top:50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    width: 70%;
+}
+#logo{
+    
+    
+   
+    
+    width: 100%;
+}
+.sign{
+    float: left;
+    background-color: rgb(175, 239, 255);
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    width: 40%;
+}
+
+.sign form{
+    position: absolute;
+    top:50%;
+    
+    
+    box-sizing: border-box;
+    float: left;
+    padding:30px 15%;
+    text-align: center;
+    -webkit-transform: translate(0, -30%);
+    transform: translate(0, -30%);
+}
+
+
+.sign input[type="text"],input[type="password"]{
+    
+    border: 1px silver solid;
+    font-family: "Gotham-light";
+    font-size: 30px;
+    
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    
+    text-align: center;
+    width: 100%;
+}
+
+.sign  input[type="submit"]{
+    background-color: #35D0FC;
+    border: none;
+    font-family: "Gotham";
+    font-size: 30px;
+    padding: 5px;
+    width: 50%;
+    text-align: center;
+    
+}
+
+.sign  input[type="submit"]:hover{
+   
+    background-color: #35D0FC;
+    
+}

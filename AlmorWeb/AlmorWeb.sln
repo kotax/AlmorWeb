@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmorWeb", "AlmorWeb\AlmorW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmorAPI", "AlmorAPI\AlmorAPI.csproj", "{938C281F-2367-4E09-AF02-E068112172E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmorWebApi", "AlmorWebApi\AlmorWebApi.csproj", "{A9BCFED9-541F-4805-BAE0-8A5653F965F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{938C281F-2367-4E09-AF02-E068112172E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938C281F-2367-4E09-AF02-E068112172E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938C281F-2367-4E09-AF02-E068112172E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9BCFED9-541F-4805-BAE0-8A5653F965F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BCFED9-541F-4805-BAE0-8A5653F965F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BCFED9-541F-4805-BAE0-8A5653F965F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BCFED9-541F-4805-BAE0-8A5653F965F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

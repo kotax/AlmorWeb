@@ -13,6 +13,9 @@ namespace AlmorWeb
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //WebApiConfig.Register(GlobalConfiguration.Configuration);
+            //Database.SetInitializer(new DropCreateDatabaseAlways<OracleDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<OracleDbContext>());
         }
     }
 }
