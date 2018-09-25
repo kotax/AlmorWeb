@@ -3,7 +3,8 @@
     ViewBag.Title = "Index";
     ViewBag.Style = "/Content/style.css";
     Random r = new Random();
-
+    string[] nome = { "Pedro", "José", "Maria", "Ana", "Luiza", "Antonio", "Leoardo", "Fernando", "Rafaela", "Marta", "Mario", "Isabela" };
+    string[] sobre = { "da Silva", "Santos", "Rodrigues", "Andrade", "Almeida", "Ferreira", "Barros", "Oliveira" };
 }
 
 <header>
@@ -70,10 +71,10 @@
                                     #@i
                                 </td>
                                 <td class="name">
-                                    John Doe
+                                    @(nome[r.Next(0,11)] + " " + sobre[r.Next(0,7)])
                                 </td>
                                 <td class="points">
-                                    @(13450 - i*10 - r.Next(0,6))
+                                    @(13450 - i*100 - r.Next(0,6))
                                 </td>
                             </tr>
                         </table>
