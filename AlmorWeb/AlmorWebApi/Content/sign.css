@@ -1,19 +1,18 @@
 
-@font-face{
+@font-face {
     font-family: "Gotham";
-    src: url("../fonts/GothamMedium.ttf");
+    src: url("../fonts/GothamMedium.otf");
 }
 
 @font-face{
     font-family: "Gotham";
-    src: url("../fonts/GothamBold.ttf");
+    src: url("../fonts/GothamBold.otf");
     font-weight: bold;
 }
 
-@font-face{
+@font-face {
     font-family: "Gotham-light";
-    src: url("../fonts/GothamLight.ttf");
-   
+    src: url("../fonts/GothamLight.otf");
 }
 html{
     height: 100%;

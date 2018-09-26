@@ -131,6 +131,9 @@
     <Content Include="fonts\GothamBold.ttf" />
     <Content Include="fonts\GothamLight.ttf" />
     <Content Include="fonts\GothamMedium.ttf" />
+    <Content Include="fonts\GothamBold.otf" />
+    <Content Include="fonts\GothamLight.otf" />
+    <Content Include="fonts\GothamMedium.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.bundle.min.js" />
     <Content Include="Scripts\Chart.js" />
